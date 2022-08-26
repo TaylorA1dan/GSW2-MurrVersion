@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6AB6B48-B388-427D-8CE9-2A06E3F63736}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GunshotWound2</RootNamespace>
+    <AssemblyName>GunshotWound2</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\ScriptHookVDotNet3.3.1.0\lib\net48\ScriptHookVDotNet3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Weighted Randomizer, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\WeightedRandomizer.1.0.3\lib\net35\Weighted Randomizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configs\LocaleConfig.cs" />
+    <Compile Include="Configs\MainConfig.cs" />
+    <Compile Include="Configs\NpcConfig.cs" />
+    <Compile Include="Configs\PlayerConfig.cs" />
+    <Compile Include="Configs\WoundConfig.cs" />
+    <Compile Include="Crits\ArmsCriticalSystem.cs" />
+    <Compile Include="Crits\BaseCriticalSystem.cs" />
+    <Compile Include="Crits\GutsCriticalSystem.cs" />
+    <Compile Include="Crits\HeartCriticalSystem.cs" />
+    <Compile Include="Crits\LegsCriticalSystem.cs" />
+    <Compile Include="Crits\LungsCriticalSystem.cs" />
+    <Compile Include="Crits\NervesCriticalSystem.cs" />
+    <Compile Include="Crits\StomachCriticalSystem.cs" />
+    <Compile Include="Damage\BaseDamageSystem.cs" />
+    <Compile Include="Damage\BaseGunDamageSystem.cs" />
+    <Compile Include="Damage\BaseImpactDamageSystem.cs" />
+    <Compile Include="Damage\BleedingComponent.cs" />
+    <Compile Include="Damage\BleedingSystem.cs" />
+    <Compile Include="Damage\CuttingDamageSystem.cs" />
+    <Compile Include="Damage\ExplosionDamageSystem.cs" />
+    <Compile Include="Damage\HaveDamageMarkComponent.cs" />
+    <Compile Include="Damage\HeavyImpactDamageSystem.cs" />
+    <Compile Include="Damage\HighCaliberDamageSystem.cs" />
+    <Compile Include="Damage\LightImpactDamageSystem.cs" />
+    <Compile Include="Damage\MediumCaliberDamageSystem.cs" />
+    <Compile Include="Damage\ProcessWoundEvent.cs" />
+    <Compile Include="Damage\ShotgunDamageSystem.cs" />
+    <Compile Include="Damage\SmallCaliberDamageSystem.cs" />
+    <Compile Include="Damage\WoundSystem.cs" />
+    <Compile Include="Effects\ArmorSystem.cs" />
+    <Compile Include="Effects\SwitchMoveSetRequest.cs" />
+    <Compile Include="Effects\InstantHealEvent.cs" />
+    <Compile Include="Effects\InstantHealSystem.cs" />
+    <Compile Include="Effects\RagdollSystem.cs" />
+    <Compile Include="Effects\SetPedToRagdollEvent.cs" />
+    <Compile Include="Effects\MoveSetSwitchSystem.cs" />
+    <Compile Include="GUI\CheckSystem.cs" />
+    <Compile Include="GUI\DebugInfoSystem.cs" />
+    <Compile Include="GUI\NotificationSystem.cs" />
+    <Compile Include="GUI\ShowDebugInfoEvent.cs" />
+    <Compile Include="GUI\ShowHealthStateEvent.cs" />
+    <Compile Include="GUI\ShowNotificationEvent.cs" />
+    <Compile Include="GunshotWound2.cs" />
+    <Compile Include="Healing\ApplyBandageEvent.cs" />
+    <Compile Include="Healing\BandageInProgressComponent.cs" />
+    <Compile Include="Healing\BandageSystem.cs" />
+    <Compile Include="Healing\SelfHealingSystem.cs" />
+    <Compile Include="Healing\SuccessfulBandageEvent.cs" />
+    <Compile Include="HitDetection\BodyHitSystem.cs" />
+    <Compile Include="HitDetection\BodyPartWasHitEvent.cs" />
+    <Compile Include="HitDetection\CheckBodyHitEvent.cs" />
+    <Compile Include="HitDetection\HitCleanSystem.cs" />
+    <Compile Include="HitDetection\HitDetectSystem.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\BaseWeaponHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\BaseWeaponHitSystem.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\CuttingHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\ExplosionHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\HeavyImpactHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\HighCaliberHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\LightImpactHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\MediumCaliberHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\ShotgunHitEvent.cs" />
+    <Compile Include="HitDetection\WeaponHitSystems\SmallCaliberHitEvent.cs" />
+    <Compile Include="HitDetection\WoundedPedComponent.cs" />
+    <Compile Include="Pain\AveragePainChangeStateEvent.cs" />
+    <Compile Include="Pain\AveragePainStateSystem.cs" />
+    <Compile Include="Pain\BaseChangePainStateEvent.cs" />
+    <Compile Include="Pain\BasePainStateSystem.cs" />
+    <Compile Include="Pain\DeadlyPainChangeStateEvent.cs" />
+    <Compile Include="Pain\DeadlyPainStateSystem.cs" />
+    <Compile Include="Pain\IncreasePainEvent.cs" />
+    <Compile Include="Pain\IncreasePainSystem.cs" />
+    <Compile Include="Pain\IntensePainChangeStateEvent.cs" />
+    <Compile Include="Pain\IntensePainStateSystem.cs" />
+    <Compile Include="Pain\MildPainChangeStateEvent.cs" />
+    <Compile Include="Pain\MildPainStateSystem.cs" />
+    <Compile Include="Pain\NoPainChangeStateEvent.cs" />
+    <Compile Include="Pain\NoPainStateSystem.cs" />
+    <Compile Include="Pain\PainComponent.cs" />
+    <Compile Include="Pain\PainRecoverySystem.cs" />
+    <Compile Include="Pain\UnbearablePainChangeStateEvent.cs" />
+    <Compile Include="Pain\UnbearablePainStateSystem.cs" />
+    <Compile Include="Utils\VariousExtensions.cs" />
+    <Compile Include="World\ConvertPedToNpcGswPedEvent.cs" />
+    <Compile Include="World\ConvertPedToNpcGswPedSystem.cs" />
+    <Compile Include="World\ForceWorldPedUpdateEvent.cs" />
+    <Compile Include="World\GswWorld.cs" />
+    <Compile Include="World\NpcFindSystem.cs" />
+    <Compile Include="World\NpcMarkComponent.cs" />
+    <Compile Include="World\RemoveWoundedPedSystem.cs" />
+    <Compile Include="Player\AddCameraShakeEvent.cs" />
+    <Compile Include="Player\AddFlashEvent.cs" />
+    <Compile Include="Player\AddHelmetToPlayerEvent.cs" />
+    <Compile Include="Player\AdrenalineSystem.cs" />
+    <Compile Include="Player\CameraShakeSystem.cs" />
+    <Compile Include="Player\ChangeSpecialAbilityEvent.cs" />
+    <Compile Include="Player\FlashSystem.cs" />
+    <Compile Include="Player\HelmetRequestSystem.cs" />
+    <Compile Include="Player\PlayerMarkComponent.cs" />
+    <Compile Include="Player\PlayerSystem.cs" />
+    <Compile Include="Player\SpecialAbilityLockSystem.cs" />
+    <Compile Include="Utils\ComponentWithEntity.cs" />
+    <Compile Include="Utils\LocalizationManager.cs" />
+    <Compile Include="Utils\MultiTickEcsSystems.cs" />
+    <Compile Include="Utils\RandomExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\leoEcs\Leopotam.Ecs.csproj">
+      <Project>{45fc0562-7188-4470-b350-6a73699fe6e2}</Project>
+      <Name>Leopotam.Ecs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GSW2Config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GSW2Localization.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
